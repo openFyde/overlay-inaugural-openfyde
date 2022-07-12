@@ -1,4 +1,4 @@
-chromeos-base/auto-expand-partition::openfyde
+#chromeos-base/auto-expand-partition::openfyde
 virtual/chromeos-bsp::fydeos
 sys-kernel/linux-firmware::patches
 sys-kernel/linux-firmware::openfyde-patches
