@@ -1,6 +1,6 @@
 # overlay-inaugural-openfyde
 
-![Logo badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fopenfyde-badge-wivuxrq8xzvh.runkit.sh%2F) ![Release badge](https://img.shields.io/github/v/release/openFyde/overlay-rock5b-openfyde?label=latest%20release%20image)
+![Logo badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fopenfyde-badge-wivuxrq8xzvh.runkit.sh%2F) ![Release badge](https://img.shields.io/github/v/release/openFyde/overlay-inaugural-openfyde?label=latest%20release%20image)
 
 
 <br>
