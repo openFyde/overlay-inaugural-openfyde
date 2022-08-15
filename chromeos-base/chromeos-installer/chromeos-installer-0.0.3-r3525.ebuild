@@ -1,0 +1,1 @@
+chromeos-installer-0.0.3-r3524.ebuild

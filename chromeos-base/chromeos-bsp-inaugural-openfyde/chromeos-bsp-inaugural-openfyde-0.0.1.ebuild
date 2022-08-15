@@ -21,4 +21,6 @@ src_install() {
   insinto /etc/init
   doins boot-splash.override
   doins auto-expand-partition.override
+  exeinto /usr/sbin
+  doexe fix_kernel_parts_uuid.sh
 }
