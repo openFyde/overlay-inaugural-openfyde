@@ -1,4 +1,4 @@
-unset -f cros_post_src_install_openfyde_mark_clean_overlay
+# unset -f cros_post_src_install_openfyde_mark_clean_overlay
 
 cros_post_src_install_inaugural_openfyde_switch_root() {
   exeinto /usr/sbin

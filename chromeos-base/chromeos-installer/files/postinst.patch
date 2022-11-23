@@ -1,8 +1,8 @@
 diff --git a/installer/chromeos-postinst b/installer/chromeos-postinst
-index bd8e095c4..71297e0b5 100755
+index 9fbae9c195..34dd3e1c82 100755
 --- a/installer/chromeos-postinst
 +++ b/installer/chromeos-postinst
-@@ -20,7 +20,26 @@ cleanup() {
+@@ -29,7 +29,32 @@ cleanup() {
    done
  }
  
@@ -22,6 +22,12 @@ index bd8e095c4..71297e0b5 100755
 +  echo ${disk_dev##*[a-z]}
 +}
 +
++get_android_version() {
++  local lsbfile=$1
++  local version=$(cat $lsbfile | grep CHROMEOS_ARC_VERSION)
++  echo ${version#*=}
++}
++
  main() {
 +  local target_disk=$(get_disk_dev)
 +  local target_part_num=$(get_part_num)
@@ -29,3 +35,14 @@ index bd8e095c4..71297e0b5 100755
    cd "${INSTALL_ROOT}" || exit 1
  
    trap cleanup EXIT
+@@ -40,6 +65,10 @@ main() {
+     mount --make-slave "./${d}"
+   done
+ 
++  if [ "$(get_android_version /etc/lsb-release)" -ne "$(get_android_version etc/lsb-release)" ]; then
++    chroot . /usr/sbin/mark_clean_overlay.sh $target_part_num $root_dev
++  fi
++
+   local install_dev="$1"
+   shift
+   chroot . /usr/bin/cros_installer --type="postinst" \
