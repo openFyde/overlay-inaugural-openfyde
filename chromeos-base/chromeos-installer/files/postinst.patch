@@ -2,7 +2,7 @@ diff --git a/installer/chromeos-postinst b/installer/chromeos-postinst
 index 9fbae9c195..34dd3e1c82 100755
 --- a/installer/chromeos-postinst
 +++ b/installer/chromeos-postinst
-@@ -29,7 +29,32 @@ cleanup() {
+@@ -29,7 +29,34 @@ cleanup() {
    done
  }
  
@@ -31,6 +31,8 @@ index 9fbae9c195..34dd3e1c82 100755
  main() {
 +  local target_disk=$(get_disk_dev)
 +  local target_part_num=$(get_part_num)
++  # mount efi of switch may fail on low speed storage, call sync first
++  sync
 +  ${INSTALL_ROOT}/usr/sbin/switch_root.sh $target_part_num $target_disk
    cd "${INSTALL_ROOT}" || exit 1
  
