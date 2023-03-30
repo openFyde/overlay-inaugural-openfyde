@@ -77,6 +77,17 @@ change_boot_to() {
 main() {
  local part_num=$1
  local disk_dev=$2
+
+ # main $@ consumed the first empty arg
+ if [ "$#" -eq 1 ]; then
+   disk_dev=$1
+   part_num=""
+ fi
+
+ if [ "$part_num" != "$rootA" ] && [ "$part_num" != "$rootB" ]; then
+   part_num=""
+ fi
+
  [ -z "${disk_dev}" ] && disk_dev=$(rootdev -d)
  [ -z "${part_num}" ] && part_num=$(determin_root_num)
  check_var $part_num $disk_dev
