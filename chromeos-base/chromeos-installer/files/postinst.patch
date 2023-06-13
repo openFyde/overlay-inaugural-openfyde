@@ -1,8 +1,8 @@
 diff --git a/installer/chromeos-postinst b/installer/chromeos-postinst
-index 9fbae9c195..34dd3e1c82 100755
+index 875a85b4f62e..ee99e0b531e7 100755
 --- a/installer/chromeos-postinst
 +++ b/installer/chromeos-postinst
-@@ -29,7 +29,35 @@ cleanup() {
+@@ -37,7 +37,35 @@ cleanup() {
    done
  }
  
@@ -38,7 +38,7 @@ index 9fbae9c195..34dd3e1c82 100755
    cd "${INSTALL_ROOT}" || exit 1
  
    trap cleanup EXIT
-@@ -40,6 +65,10 @@ main() {
+@@ -48,6 +76,10 @@ main() {
      mount --make-slave "./${d}"
    done
  
