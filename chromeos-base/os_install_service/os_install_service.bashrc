@@ -10,5 +10,5 @@ cros_post_src_install_rock5b_os_install_service() {
 }
 
 cros_pre_src_prepare_rock5b_os_install_service() {
-  eapply ${ROCK5B_OPENFYDE_BASE_BASHRC_FILEPATH}/0001-remove-os_install_service-seccomp-policy-for-minijail.patch
+  eapply ${INAUGURAL_OPENFYDE_BASHRC_FILESDIR}/0001-remove-os_install_service-seccomp-policy-for-minijail.patch
 }
