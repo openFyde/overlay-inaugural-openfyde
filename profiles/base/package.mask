@@ -8,5 +8,4 @@ sys-kernel/chromeos-kernel-5_10::openfyde-patches
 sys-kernel/chromeos-kernel-5_10::patches
 chromeos-base/chromeos-init::patches
 chromeos-base/chromeos-init::openfyde-patches
-chromeos-base/cryptohome::openfyde-patches
 chromeos-base/trunks::openfyde-patches
