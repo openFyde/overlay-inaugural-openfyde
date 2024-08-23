@@ -2,7 +2,7 @@ Index: installer/chromeos-install
 ===================================================================
 --- installer.orig/chromeos-install
 +++ installer/chromeos-install
-@@ -752,6 +752,8 @@ install_stateful() {
+@@ -782,6 +782,8 @@ install_stateful() {
      #
      touch ${TMPMNT}/.developer_mode
    fi
@@ -28,14 +28,14 @@ Index: installer/chromeos-postinst
  main() {
    cd "${INSTALL_ROOT}" || exit 1
  
-@@ -47,7 +53,9 @@ main() {
-     mount -n --bind "${d}" "./${d}"
-     mount --make-slave "./${d}"
-   done
+@@ -50,7 +56,9 @@ main() {
+       mount --make-slave "./${d}"
+     done
+   fi
 -
-+	if [ "$(get_android_version /etc/lsb-release)" -ne "$(get_android_version etc/lsb-release)" ]; then
-+		chroot . /usr/sbin/mark_clean_overlay.sh $target_part_num $root_dev
-+	fi
++  if [ "$(get_android_version /etc/lsb-release)" -ne "$(get_android_version etc/lsb-release)" ]; then
++    chroot . /usr/sbin/mark_clean_overlay.sh $target_part_num $root_dev
++  fi
    local install_dev="$1"
    shift
    chroot . /usr/bin/cros_installer --type="postinst" \

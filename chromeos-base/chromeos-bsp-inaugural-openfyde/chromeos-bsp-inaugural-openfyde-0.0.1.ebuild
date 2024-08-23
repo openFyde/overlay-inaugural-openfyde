@@ -22,6 +22,4 @@ src_install() {
   doins auto-expand-partition.override
   exeinto /usr/sbin
   doexe fix_kernel_parts_uuid.sh
-  insinto /usr/share/chromeos-assets
-  doins ${FILESDIR}/splash_background
 }
