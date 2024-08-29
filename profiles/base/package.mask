@@ -6,4 +6,3 @@ media-libs/minigbm::patches
 media-libs/minigbm::openfyde-patches
 sys-kernel/chromeos-kernel-5_10::openfyde-patches
 sys-kernel/chromeos-kernel-5_10::patches
-chromeos-base/trunks::openfyde-patches
