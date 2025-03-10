@@ -2,7 +2,7 @@ Index: installer/chromeos_legacy.cc
 ===================================================================
 --- installer.orig/chromeos_legacy.cc
 +++ installer/chromeos_legacy.cc
-@@ -252,12 +252,13 @@ bool RunLegacyUBootPostInstall(const Ins
+@@ -261,12 +261,13 @@ bool RunLegacyUBootPostInstall(const Ins
  
    result &= CopyBootFile(install_config,
                           "boot/boot-" + install_config.slot + ".scr.uimg",

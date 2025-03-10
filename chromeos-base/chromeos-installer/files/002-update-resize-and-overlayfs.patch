@@ -1,16 +1,3 @@
-Index: installer/chromeos-install
-===================================================================
---- installer.orig/chromeos-install
-+++ installer/chromeos-install
-@@ -782,6 +782,8 @@ install_stateful() {
-     #
-     touch ${TMPMNT}/.developer_mode
-   fi
-+  # avoid modify the gpt table
-+  touch ${TMPMNT}/.autoexpanded
- 
-   if [ -n "${IS_RECOVERY_INSTALL-}" ] ; then
-     # This is a recovery install; write some recovery metrics to the stateful
 Index: installer/chromeos-postinst
 ===================================================================
 --- installer.orig/chromeos-postinst
@@ -39,3 +26,16 @@ Index: installer/chromeos-postinst
    local install_dev="$1"
    shift
    chroot . /usr/bin/cros_installer --type="postinst" \
+Index: installer/chromeos-install.sh
+===================================================================
+--- installer.orig/chromeos-install.sh
++++ installer/chromeos-install.sh
+@@ -558,6 +558,8 @@ install_stateful() {
+     #
+     touch "${TMPMNT}"/.developer_mode
+   fi
++  # avoid modify the gpt table
++  touch ${TMPMNT}/.autoexpanded
+ 
+   if [ -n "${IS_RECOVERY_INSTALL-}" ] ; then
+     # This is a recovery install; write some recovery metrics to the stateful
